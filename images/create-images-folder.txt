@@ -1,0 +1,3 @@
+github can not create empty folder
+>create a file with directory like path/to/folder/readme.txt
+>auto create folder
