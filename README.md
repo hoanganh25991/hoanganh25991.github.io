@@ -1,10 +1,10 @@
 # GitHub Pages Portfolio
 
-This repository serves as the main GitHub Pages site for showcasing my projects and web applications.
+This repository serves as the main GitHub Pages site.
 
 ## Overview
 
-This GitHub Pages repository hosts a collection of my web development projects, primarily focused on interactive JavaScript applications and games. The site provides easy navigation to various subprojects hosted under this domain.
+This GitHub Pages repository hosts a collection of web development projects, primarily focused on interactive JavaScript applications and games. The site provides easy navigation to various subprojects hosted under this domain.
 
 ## Main Features
 
