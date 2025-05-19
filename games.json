@@ -1,0 +1,49 @@
+{
+  "games": [
+    {
+      "id": "threejs-monk-journey",
+      "title": "Three.js Monk Journey",
+      "description": "Embark on a spiritual adventure through mystical landscapes",
+      "icon": "50.svg",
+      "iconAlt": "Monk Journey Icon",
+      "tags": ["Three.js", "Adventure"],
+      "previewTitle": "Three.js Monk Journey - Preview"
+    },
+    {
+      "id": "threejs-warrior",
+      "title": "Three.js Warrior",
+      "description": "Original warrior game with immersive 3D environments",
+      "icon": "50.svg",
+      "iconAlt": "Three.js Warrior Icon",
+      "tags": ["Three.js", "Action"],
+      "previewTitle": "Three.js Warrior - Preview"
+    },
+    {
+      "id": "p5js-squad",
+      "title": "P5.js Squad",
+      "description": "Lead a squad through challenging tactical missions",
+      "icon": "50.svg",
+      "iconAlt": "P5.js Squad Icon",
+      "tags": ["P5.js", "Strategy", "Team"],
+      "previewTitle": "P5.js Squad - Preview"
+    },
+    {
+      "id": "p5js-soldier",
+      "title": "P5.js Soldier",
+      "description": "Strategic combat simulation with creative visuals",
+      "icon": "50.svg",
+      "iconAlt": "P5.js Soldier Icon",
+      "tags": ["P5.js", "Strategy"],
+      "previewTitle": "P5.js Soldier - Preview"
+    },
+    {
+      "id": "p5js-tank",
+      "title": "P5.js Tank",
+      "description": "Command powerful tanks in intense battlefield scenarios",
+      "icon": "50.svg",
+      "iconAlt": "P5.js Tank Icon",
+      "tags": ["P5.js", "Action"],
+      "previewTitle": "P5.js Tank - Preview"
+    }
+  ]
+}
