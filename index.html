@@ -58,7 +58,35 @@
 <body>
     <header>
         <h1>Game Collection</h1>
+        <audio id="background-music" loop>
+            <source src="sia-unstoppable.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </header>
+    
+    <!-- Welcome Overlay -->
+    <div id="welcome-overlay" class="welcome-overlay">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="welcome-content">
+            <h2>Welcome to Game Collection</h2>
+            <p>Discover a world of interactive games and experiences</p>
+            <button id="welcome-button" class="welcome-button">
+                <i class="fas fa-gamepad"></i> Start Your Journey
+            </button>
+        </div>
+    </div>
+    
     <div class="container">
         <ul id="game-list" class="game-list">
             <!-- Games will be loaded from JSON -->
@@ -90,18 +118,19 @@
 
                 // Create game HTML
                 gameItem.innerHTML = `
-                    <img src="${game.icon}" alt="${game.iconAlt}" class="floating">
                     <div class="game-info">
                         <div class="game-title">${game.title}</div>
-                        <div class="game-description">${game.description}</div>
-                        <div class="game-tags">
-                            ${game.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('')}
+                        <div class="game-content">
+                            <div class="game-description">${game.description}</div>
+                            <div class="game-tags">
+                                ${game.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('')}
+                            </div>
                         </div>
-                    </div>
-                    <div class="game-actions">
-                        <a href="${game.id}" target="_blank" class="btn btn-play">
-                            <i class="fas fa-play"></i> Play
-                        </a>
+                        <div class="game-actions">
+                            <a href="${game.id}" target="_blank" class="btn btn-play">
+                                <i class="fas fa-play"></i> Play
+                            </a>
+                        </div>
                     </div>
                 `;
 
@@ -132,7 +161,52 @@
         }
 
         // Load games when the page loads
-        document.addEventListener('DOMContentLoaded', loadGames);
+        document.addEventListener('DOMContentLoaded', () => {
+            loadGames();
+            setupWelcomeScreen();
+        });
+        
+        // Setup welcome screen
+        function setupWelcomeScreen() {
+            const welcomeOverlay = document.getElementById('welcome-overlay');
+            const welcomeButton = document.getElementById('welcome-button');
+            const gameList = document.getElementById('game-list');
+            const audioElement = document.getElementById('background-music');
+            
+            // Initially hide the game list
+            gameList.style.opacity = '0';
+            gameList.style.visibility = 'hidden';
+            
+            // When welcome button is clicked
+            welcomeButton.addEventListener('click', () => {
+                // Play the audio
+                audioElement.play()
+                    .then(() => {
+                        // Hide welcome overlay with animation
+                        welcomeOverlay.classList.add('fade-out');
+                        
+                        // After animation completes, hide overlay and show game list
+                        setTimeout(() => {
+                            welcomeOverlay.style.display = 'none';
+                            gameList.style.visibility = 'visible';
+                            gameList.style.opacity = '1';
+                        }, 800);
+                    })
+                    .catch(error => {
+                        console.log("Couldn't play audio:", error);
+                        // Still hide welcome screen even if audio fails
+                        welcomeOverlay.classList.add('fade-out');
+                        
+                        setTimeout(() => {
+                            welcomeOverlay.style.display = 'none';
+                            gameList.style.visibility = 'visible';
+                            gameList.style.opacity = '1';
+                        }, 800);
+                    });
+            });
+        }
+
+
     </script>
 </body>
 </html>

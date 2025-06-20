@@ -113,7 +113,6 @@ header {
 
 header h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.8rem;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -125,7 +124,7 @@ header h1 {
 }
 
 .container {
-    padding: 2rem;
+    padding: 1rem;
     background-color: transparent;
     max-width: 1200px;
     margin: auto 0;
@@ -138,7 +137,7 @@ header h1 {
 
 .game-item {
     position: relative;
-    padding: 20px;
+    padding: 1rem;
     border-radius: var(--border-radius-lg);
     display: flex;
     align-items: center;
@@ -147,16 +146,14 @@ header h1 {
     /* Removed backdrop-filter for better performance */
     box-shadow: var(--shadow-md);
     /* Removed cursor: pointer since items are no longer clickable */
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     overflow: hidden;
     /* Simplified for better performance */
 }
 
-/* Apply transitions only on non-mobile devices */
-@media (min-width: 768px) {
-    .game-item {
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-left 0.3s ease;
-    }
+/* Base styles for all devices - mobile first */
+.game-item {
+    /* No transitions by default for better mobile performance */
 }
 
 .game-item::before {
@@ -166,44 +163,35 @@ header h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-secondary); /* Blue to Green gradient */
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    background: var(--gradient-secondary); /* Orange to Green gradient */
+    opacity: 0.05; /* Slight visible gradient by default for mobile */
     z-index: 0;
 }
 
-.game-item:hover {
-    transform: translateY(-3px); /* Reduced movement for better performance */
-    box-shadow: var(--shadow-lg), 
-                0 0 10px rgba(211, 84, 0, 0.4); /* Dark orange glow - monk robe color */
+/* Active state for mobile (touch) */
+.game-item:active {
+    box-shadow: var(--shadow-md);
     border-left: 4px solid var(--magic);
-    background: rgba(34, 48, 30, 0.9); /* Darker green on hover for contrast */
-}
-
-.game-item:hover::before {
-    opacity: 0.1;
+    background: rgba(34, 48, 30, 0.9); /* Darker green on active for contrast */
 }
 
 .game-item img {
-    width: 70px;
-    height: 70px;
-    margin-right: 25px;
+    width: 60px; /* Slightly smaller for mobile */
+    height: 60px;
+    margin-right: 15px; /* Less margin for mobile */
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-accent); /* Yellow border (preserved) */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(211, 84, 0, 0.4); /* Dark orange glow - monk robe color */
-    transition: all 0.4s ease;
+    border: 3px solid var(--primary-accent); /* Yellow border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Simpler shadow for mobile */
     background-color: rgba(255, 255, 255, 0.08);
     padding: 5px;
     position: relative;
     z-index: 1;
 }
 
-.game-item:hover img {
-    transform: scale(1.1) rotate(5deg);
-    border-color: var(--magic); /* Yellow border (preserved) */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(211, 84, 0, 0.5); /* Dark orange glow - monk robe color */
-    background-color: rgba(255, 255, 255, 0.12);
+/* Active state for mobile touch */
+.game-item:active img {
+    border-color: var(--magic);
 }
 
 .game-info {
@@ -215,16 +203,15 @@ header h1 {
 }
 
 .game-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* Smaller for mobile */
     font-weight: bold;
     color: var(--snow);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1.2px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 221, 0, 0.3);
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     position: relative;
     display: inline-block;
-    transition: all 0.3s ease;
 }
 
 .game-title::after {
@@ -235,27 +222,20 @@ header h1 {
     width: 40px;
     height: 3px;
     background: var(--gradient-accent);
-    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     border-radius: 3px;
 }
 
-.game-item:hover .game-title {
-    color: var(--primary-accent); /* Yellow text on hover */
-    transform: translateX(5px);
-}
-
-.game-item:hover .game-title::after {
-    width: 100%;
-    background: var(--gradient-secondary);
+/* Active state for mobile touch */
+.game-item:active .game-title {
+    color: var(--primary-accent);
 }
 
 .game-description {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Smaller for mobile */
     color: var(--text-secondary);
-    margin-bottom: 10px;
-    max-width: 90%;
-    transition: all 0.3s ease;
-    line-height: 1.5;
+    margin-bottom: 8px;
+    max-width: 100%; /* Full width on mobile */
+    line-height: 1.4;
     opacity: 0.9;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -264,9 +244,9 @@ header h1 {
     overflow: hidden;
 }
 
-.game-item:hover .game-description {
+/* Active state for mobile touch */
+.game-item:active .game-description {
     color: var(--text-primary);
-    opacity: 1;
 }
 
 .game-tags {
@@ -277,66 +257,68 @@ header h1 {
 }
 
 .game-tag {
-    font-size: 0.75rem;
-    padding: 4px 12px;
-    border-radius: 20px;
-    background-color: rgba(211, 84, 0, 0.25); /* Dark orange background - monk robe color */
+    font-size: 0.7rem; /* Smaller for mobile */
+    padding: 3px 10px; /* Smaller padding for mobile */
+    border-radius: 16px;
+    background-color: rgba(211, 84, 0, 0.25); /* Dark orange background */
     color: var(--text-primary);
     font-weight: 600;
     letter-spacing: 0.5px;
-    transition: all 0.3s ease;
     border: 1px solid rgba(211, 84, 0, 0.4); /* Dark orange border */
     box-shadow: var(--shadow-sm);
-    backdrop-filter: blur(5px);
+    /* Remove backdrop-filter for better mobile performance */
 }
 
-.game-item:hover .game-tag {
-    background-color: rgba(107, 142, 35, 0.25); /* Olive green background on hover */
-    transform: translateY(-2px);
-    border-color: rgba(107, 142, 35, 0.5); /* Olive green border on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Active state for mobile touch */
+.game-item:active .game-tag {
+    background-color: rgba(107, 142, 35, 0.25); /* Olive green background on active */
+    border-color: rgba(107, 142, 35, 0.5); /* Olive green border on active */
     color: var(--snow);
 }
 
 .game-actions {
     display: flex;
-    gap: 15px;
-    margin-left: 20px;
+    gap: 10px; /* Less gap for mobile */
+    margin-left: 0; /* No margin for mobile */
+    margin-top: 15px; /* Add top margin for mobile */
+    width: 100%; /* Full width for mobile */
+    justify-content: center; /* Center buttons on mobile */
     position: relative;
     z-index: 1;
 }
 
 .btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
+    padding: 10px 15px; /* Smaller padding for mobile */
+    font-size: 0.85rem; /* Smaller font for mobile */
     cursor: pointer;
     border: none;
     border-radius: 8px;
     font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    justify-content: center; /* Center content for mobile */
+    gap: 8px; /* Less gap for mobile */
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
+    flex: 1; /* Take full width on mobile */
 }
 
+/* Simplified button effect for mobile */
 .btn::after {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: transform 0.4s ease;
-    transform: skewX(-15deg);
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
 }
 
-.btn:hover::after {
-    transform: translateX(200%) skewX(-15deg);
+.btn:active::after {
+    opacity: 1;
 }
 
 /* Button preview styles removed - not used in current implementation */
@@ -345,109 +327,63 @@ header h1 {
     background: var(--gradient-accent); /* Yellow to Dark Orange gradient */
     color: var(--text-primary);
     width: 100%;
-    justify-content: center;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); /* Dark orange shadow - monk robe color */
-    min-width: 120px;
+    box-shadow: 0 3px 8px rgba(211, 84, 0, 0.3); /* Lighter shadow for mobile */
+    min-width: 100px; /* Smaller min-width for mobile */
     border-radius: var(--border-radius-md);
 }
 
-.btn-play:hover {
-    box-shadow: 0 6px 15px rgba(211, 84, 0, 0.5); /* Dark orange shadow on hover */
-    transform: translateY(-2px) scale(1.05);
+/* Active state for mobile touch */
+.btn-play:active {
+    box-shadow: 0 2px 5px rgba(211, 84, 0, 0.5);
     color: var(--snow);
 }
 
-.btn-play i {
-    transition: transform 0.3s ease;
-}
-
-.btn-play:hover i {
-    transform: translateX(3px);
+/* Active state for icon */
+.btn-play:active i {
+    opacity: 0.8;
 }
 
 /* Preview functionality has been removed */
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .game-item {
-        flex-wrap: wrap;
-        padding: 18px 15px;
-    }
-    
-    .game-info {
-        flex: 1;
-        min-width: 0; /* Allows text to wrap properly */
-    }
-
-    .game-actions {
-        width: 100%;
-        justify-content: center;
-        margin-top: 18px;
-        margin-left: 0;
-        order: 3; /* Places buttons below image and text */
-    }
-
-    .btn {
-        padding: 10px 15px;
-        font-size: 0.85rem;
-        flex: 1;
-        justify-content: center;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    .game-title {
-        font-size: 1.4rem;
-    }
-    
-    .container {
-        padding: 1rem;
-    }
-    
-    /* Preview container styles removed - functionality no longer used */
+/* Mobile styles for welcome overlay */
+.welcome-content {
+    padding: 1rem;
+    width: 90%;
+    max-width: 600px;
 }
 
-/* Simplified animations for better performance */
+.welcome-content h2 {
+    font-size: 1.8rem;
+}
+
+.welcome-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+}
+
 .floating {
-    /* Basic shadow without animation for all devices */
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
 }
 
-/* Apply subtle animations only on non-mobile devices */
-@media (min-width: 768px) {
-    .floating {
-        animation: float 4s linear infinite;
-        /* Remove will-change to reduce memory usage when not needed */
-    }
+/* Animations - some for all devices, enhanced for desktop */
+
+/* Welcome button pulse animation for all devices */
+.welcome-button {
+    animation: welcome-pulse 2s infinite;
 }
 
-/* Simplified animation with linear movement - no bouncing effect */
-@keyframes float {
+@keyframes welcome-pulse {
     0%, 100% {
-        transform: translateY(0);
+        box-shadow: 0 0 0 0 rgba(255, 221, 0, 0.6);
     }
     50% {
-        transform: translateY(-3px);
-    }
-}
-
-/* Simplified pulse effect for the play button - using dark orange color (monk robe) */
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 0 0 rgba(211, 84, 0, 0.5); /* Dark orange glow */
-    }
-    50% {
-        box-shadow: 0 0 0 6px rgba(211, 84, 0, 0); /* Dark orange fade */
-    }
-}
-
-/* Only apply animation on non-mobile devices */
-@media (min-width: 768px) {
-    .btn-play {
-        animation: pulse 3s infinite;
+        box-shadow: 0 0 0 8px rgba(255, 221, 0, 0);
     }
 }
 
@@ -466,6 +402,215 @@ body::after {
                 rgba(255, 221, 0, 0.03)); /* Yellow accent */
     /* Remove animation for better performance */
     z-index: -1;
+}
+
+/* Welcome Overlay */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.8s ease;
+    overflow: hidden;
+}
+
+.welcome-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, 
+                rgba(255, 221, 0, 0.2), 
+                rgba(58, 95, 58, 0.9) 70%);
+    z-index: -1;
+}
+
+/* Particles */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--primary-accent);
+    border-radius: 50%;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.particle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation: particle-float 15s linear infinite;
+}
+
+.particle:nth-child(2) {
+    top: 70%;
+    left: 30%;
+    animation: particle-float 20s linear infinite;
+    animation-delay: -5s;
+}
+
+.particle:nth-child(3) {
+    top: 40%;
+    left: 50%;
+    animation: particle-float 18s linear infinite;
+    animation-delay: -2s;
+}
+
+.particle:nth-child(4) {
+    top: 10%;
+    left: 70%;
+    animation: particle-float 22s linear infinite;
+    animation-delay: -7s;
+}
+
+.particle:nth-child(5) {
+    top: 60%;
+    left: 80%;
+    animation: particle-float 16s linear infinite;
+    animation-delay: -3s;
+}
+
+.particle:nth-child(6) {
+    top: 30%;
+    left: 25%;
+    animation: particle-float 19s linear infinite;
+    animation-delay: -10s;
+}
+
+.particle:nth-child(7) {
+    top: 80%;
+    left: 45%;
+    animation: particle-float 21s linear infinite;
+    animation-delay: -8s;
+}
+
+.particle:nth-child(8) {
+    top: 15%;
+    left: 65%;
+    animation: particle-float 17s linear infinite;
+    animation-delay: -4s;
+}
+
+.particle:nth-child(9) {
+    top: 50%;
+    left: 85%;
+    animation: particle-float 23s linear infinite;
+    animation-delay: -6s;
+}
+
+.particle:nth-child(10) {
+    top: 75%;
+    left: 15%;
+    animation: particle-float 14s linear infinite;
+    animation-delay: -9s;
+}
+
+@keyframes particle-float {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, 25px);
+    }
+    50% {
+        transform: translate(0, 50px);
+    }
+    75% {
+        transform: translate(-50px, 25px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.welcome-content {
+    text-align: center;
+    max-width: 600px;
+    background: rgba(44, 59, 34, 0.8);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--primary-accent);
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.welcome-overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.welcome-overlay.fade-out .welcome-content {
+    transform: translateY(-30px);
+}
+
+.welcome-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-accent);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.welcome-button {
+    background: var(--gradient-accent);
+    color: var(--text-primary);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.welcome-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.welcome-button:active {
+    transform: translateY(-1px);
+}
+
+.welcome-button i {
+    font-size: 1.4rem;
+}
+
+/* Game list transition */
+.game-list {
+    transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 header::before {
