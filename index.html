@@ -86,7 +86,7 @@
                 // Create game item
                 const gameItem = document.createElement('li');
                 gameItem.className = 'game-item';
-                gameItem.onclick = function() { togglePreview(this, game.id); };
+                // Removed onclick handler to prevent preview functionality
 
                 // Create game HTML
                 gameItem.innerHTML = `
@@ -99,76 +99,21 @@
                         </div>
                     </div>
                     <div class="game-actions">
-                        <a href="${game.id}" target="_blank" class="btn btn-play" onclick="event.stopPropagation()">
+                        <a href="${game.id}" target="_blank" class="btn btn-play">
                             <i class="fas fa-play"></i> Play
                         </a>
                     </div>
                 `;
 
-                // Create preview container
-                const previewContainer = document.createElement('div');
-                previewContainer.className = 'preview-container';
-                previewContainer.innerHTML = `
-                    <div class="preview-header">
-                        <div class="preview-title">${game.previewTitle}</div>
-                        <div class="preview-close"><i class="fas fa-times"></i></div>
-                    </div>
-                    <iframe class="preview-frame"></iframe>
-                `;
-
                 // Add to DOM
                 gameList.appendChild(gameItem);
-                gameList.appendChild(previewContainer);
             });
 
             // Add hover effects after rendering
             addHoverEffects();
         }
 
-        function togglePreview(gameItem, repoName) {
-            // If the click was on the game item itself (not a child element that handles its own clicks)
-            const previewContainer = gameItem.nextElementSibling;
-            const iframe = previewContainer.querySelector('.preview-frame');
-            const closeButton = previewContainer.querySelector('.preview-close');
-            
-            // Close all other previews first - use a more efficient selector
-            const activePreviews = document.querySelectorAll('.preview-container.active');
-            activePreviews.forEach(container => {
-                if (container !== previewContainer) {
-                    container.classList.remove('active');
-                }
-            });
-            
-            // Toggle current preview
-            if (previewContainer.classList.contains('active')) {
-                previewContainer.classList.remove('active');
-                // Unload iframe content when hiding to save resources
-                setTimeout(() => {
-                    if (!previewContainer.classList.contains('active')) {
-                        iframe.src = 'about:blank';
-                    }
-                }, 300); // Wait for animation to complete
-            } else {
-                // Set src attribute just before showing the preview
-                iframe.src = `${repoName}/`;
-                
-                // Use requestAnimationFrame for smoother animation
-                requestAnimationFrame(() => {
-                    previewContainer.classList.add('active');
-                });
-                
-                // Add event listener to close button only once
-                if (!closeButton.hasListener) {
-                    closeButton.hasListener = true;
-                    closeButton.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        previewContainer.classList.remove('active');
-                        // Unload iframe content when closing
-                        setTimeout(() => iframe.src = 'about:blank', 300);
-                    });
-                }
-            }
-        }
+        // Preview functionality has been removed
         
         // Add hover effects for better interactivity - optimized for performance
         function addHoverEffects() {

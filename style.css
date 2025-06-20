@@ -100,7 +100,7 @@ body {
 header {
     background: var(--gradient-primary);
     color: var(--text-primary);
-    padding: 25px 0;
+    padding: 1rem 0;
     text-align: center;
     position: sticky;
     top: 0;
@@ -123,23 +123,11 @@ header h1 {
     font-weight: 700;
 }
 
-header h1::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: var(--tertiary-accent); /* Orange Red */
-    border-radius: 3px;
-}
-
 .container {
     padding: 2rem;
     background-color: transparent;
     max-width: 1200px;
-    margin: 1rem auto 0;
+    margin: auto 0;
 }
 
 .game-list {
@@ -157,7 +145,7 @@ header h1::after {
     border-left: 4px solid var(--primary-accent);
     /* Removed backdrop-filter for better performance */
     box-shadow: var(--shadow-md);
-    cursor: pointer;
+    /* Removed cursor: pointer since items are no longer clickable */
     margin-bottom: 20px;
     overflow: hidden;
     /* Simplified for better performance */
@@ -388,87 +376,7 @@ header h1::after {
     transform: translateX(3px);
 }
 
-.preview-container {
-    width: 100%;
-    display: none; /* Use display:none instead of max-height for better performance */
-    margin-top: 0;
-    margin-bottom: 25px;
-    border-radius: var(--border-radius-lg);
-    background-color: rgba(85, 107, 47, 0.9); /* Dark olive green background */
-    /* Removed backdrop-filter for better performance */
-    will-change: opacity, transform; /* Hint to browser for optimization */
-}
-
-.preview-container.active {
-    display: block;
-    height: 60vh; /* Fixed height instead of max-height */
-    border: 1px solid var(--energy); /* Brown border */
-    box-shadow: var(--shadow-lg);
-    animation: fadeIn 0.3s ease forwards; /* Simpler animation */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.preview-frame {
-    width: 100%;
-    height: calc(60vh - 50px); /* 50px accounts for the header */
-    border: none;
-    background-color: rgba(85, 107, 47, 0.7); /* Lighter olive green background */
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.preview-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: var(--gradient-primary); /* Olive green gradient */
-    border-top-left-radius: var(--border-radius-lg);
-    border-top-right-radius: var(--border-radius-lg);
-    border-bottom: 2px solid var(--primary-accent); /* Yellow border */
-}
-
-.preview-title {
-    font-size: 1rem;
-    color: var(--snow);
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    font-family: 'Montserrat', sans-serif;
-}
-
-.preview-close {
-    cursor: pointer;
-    color: var(--text-secondary);
-    font-size: 1.3rem;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.preview-close:hover {
-    color: var(--snow);
-    background-color: rgba(255, 69, 0, 0.6); /* Orange-Red background */
-    transform: rotate(90deg);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-}
+/* Preview functionality has been removed */
 
 /* Responsive design */
 @media (max-width: 768px) {
