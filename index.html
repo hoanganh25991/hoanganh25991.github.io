@@ -94,6 +94,12 @@
     </div>
 
     <script>
+        // Load games when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadGames();
+            setupWelcomeScreen();
+        });
+
         // Load games from JSON file
         async function loadGames() {
             try {
@@ -137,35 +143,8 @@
                 // Add to DOM
                 gameList.appendChild(gameItem);
             });
-
-            // Add hover effects after rendering
-            addHoverEffects();
         }
 
-        // Preview functionality has been removed
-        
-        // Add hover effects for better interactivity - optimized for performance
-        function addHoverEffects() {
-            // Only add hover effects on non-mobile devices
-            if (window.matchMedia('(min-width: 768px)').matches) {
-                document.querySelectorAll('.game-item').forEach(item => {
-                    item.addEventListener('mouseenter', function() {
-                        this.querySelector('img').style.animationPlayState = 'paused';
-                    });
-                    
-                    item.addEventListener('mouseleave', function() {
-                        this.querySelector('img').style.animationPlayState = 'running';
-                    });
-                });
-            }
-        }
-
-        // Load games when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            loadGames();
-            setupWelcomeScreen();
-        });
-        
         // Setup welcome screen
         function setupWelcomeScreen() {
             const welcomeOverlay = document.getElementById('welcome-overlay');
@@ -205,8 +184,6 @@
                     });
             });
         }
-
-
     </script>
 </body>
 </html>
