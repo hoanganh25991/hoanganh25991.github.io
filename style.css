@@ -127,7 +127,7 @@ header h1 {
     padding: 1rem;
     background-color: transparent;
     max-width: 1200px;
-    margin: auto 0;
+    margin: 0 auto;
 }
 
 .game-list {
@@ -148,11 +148,6 @@ header h1 {
     /* Removed cursor: pointer since items are no longer clickable */
     margin-bottom: 1rem;
     overflow: hidden;
-    /* Simplified for better performance */
-}
-
-/* Base styles for all devices - mobile first */
-.game-item {
     /* No transitions by default for better mobile performance */
 }
 
@@ -346,65 +341,7 @@ header h1 {
 
 /* Preview functionality has been removed */
 
-/* Mobile styles for welcome overlay */
-.welcome-content {
-    padding: 1rem;
-    width: 90%;
-    max-width: 600px;
-}
-
-.welcome-content h2 {
-    font-size: 1.8rem;
-}
-
-.welcome-content p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.welcome-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-}
-
-.floating {
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
-}
-
-/* Animations - some for all devices, enhanced for desktop */
-
-/* Welcome button pulse animation for all devices */
-.welcome-button {
-    animation: welcome-pulse 2s infinite;
-}
-
-@keyframes welcome-pulse {
-    0%, 100% {
-        box-shadow: 0 0 0 0 rgba(255, 221, 0, 0.6);
-    }
-    50% {
-        box-shadow: 0 0 0 8px rgba(255, 221, 0, 0);
-    }
-}
-
-/* Enhanced background effect with more green tones */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-                rgba(58, 95, 58, 0.12),  /* Forest green with higher opacity */
-                rgba(107, 142, 35, 0.15), /* Olive green with higher opacity */
-                rgba(74, 107, 58, 0.08), /* Medium green */
-                rgba(255, 221, 0, 0.03)); /* Yellow accent */
-    /* Remove animation for better performance */
-    z-index: -1;
-}
-
-/* Welcome Overlay */
+/* Welcome Overlay Styles */
 .welcome-overlay {
     position: fixed;
     top: 0;
@@ -432,6 +369,40 @@ body::after {
                 rgba(58, 95, 58, 0.9) 70%);
     z-index: -1;
 }
+
+.floating {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* Animations - some for all devices, enhanced for desktop */
+
+@keyframes welcome-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 221, 0, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(255, 221, 0, 0);
+    }
+}
+
+/* Enhanced background effect with more green tones */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+                rgba(58, 95, 58, 0.12),  /* Forest green with higher opacity */
+                rgba(107, 142, 35, 0.15), /* Olive green with higher opacity */
+                rgba(74, 107, 58, 0.08), /* Medium green */
+                rgba(255, 221, 0, 0.03)); /* Yellow accent */
+    /* Remove animation for better performance */
+    z-index: -1;
+}
+
+/* Welcome Overlay - moved to be with other welcome styles */
 
 /* Particles */
 .particles {
@@ -543,6 +514,8 @@ body::after {
 
 .welcome-content {
     text-align: center;
+    padding: 1rem;
+    width: 90%;
     max-width: 600px;
     background: rgba(44, 59, 34, 0.8);
     border-radius: var(--border-radius-lg);
@@ -571,10 +544,25 @@ body::after {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Mobile styles for welcome content */
+@media (max-width: 768px) {
+    .welcome-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
 .welcome-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: var(--text-secondary);
+}
+
+/* Mobile styles for welcome content text */
+@media (max-width: 768px) {
+    .welcome-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .welcome-button {
@@ -593,6 +581,15 @@ body::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    animation: welcome-pulse 2s infinite;
+}
+
+/* Mobile styles for welcome button */
+@media (max-width: 768px) {
+    .welcome-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
 }
 
 .welcome-button:hover {
@@ -628,4 +625,68 @@ header::before {
                 rgba(42, 60, 40, 0.8) 60%);  /* Dark green background */
     opacity: 1;
     z-index: 0;
+}
+
+/* Desktop styles - apply only for larger screens */
+@media (min-width: 769px) {
+    .game-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .game-item:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+        border-left: 4px solid var(--magic);
+    }
+    
+    .game-item:hover .game-title {
+        color: var(--primary-accent);
+    }
+    
+    .game-item:hover img {
+        border-color: var(--magic);
+    }
+    
+    .game-item:hover .game-description {
+        color: var(--text-primary);
+    }
+    
+    .game-item:hover .game-tag {
+        background-color: rgba(107, 142, 35, 0.25);
+        border-color: rgba(107, 142, 35, 0.5);
+        color: var(--snow);
+    }
+    
+    .game-item img {
+        width: 70px;
+        height: 70px;
+        margin-right: 20px;
+        transition: border-color 0.3s ease;
+    }
+    
+    .game-title {
+        font-size: 1.6rem;
+    }
+    
+    .game-description {
+        font-size: 1rem;
+        max-width: 80%;
+    }
+    
+    .game-tag {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+    
+    .game-actions {
+        margin-top: 0;
+        width: auto;
+        margin-left: auto;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        flex: none;
+    }
 }
