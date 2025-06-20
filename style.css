@@ -49,30 +49,31 @@
 
 :root {
     /* Primary Colors */
-    --primary: #6B8E23;    /* Olive Green as primary background */
+    --primary: #2C3B22;    /* Dark Green-Brown as primary background */
     
     /* Text Colors */
     --text-primary: #ffffff;
     --text-secondary: #e0e0e0;
     --snow: #f8f9fa;
     
-    /* Accent Colors - Updated for Monk Journey theme */
-    --primary-accent: #ffdd00;    /* Monk Yellow */
-    --secondary-accent: #A0522D;  /* Sienna Brown */
-    --tertiary-accent: #FF4500;   /* Orange Red */
-    --magic: #ffdd00;             /* Monk Yellow */
-    --energy: #A0522D;            /* Sienna Brown */
+    /* Accent Colors - Authentic Monk Journey theme */
+    --primary-accent: #ffdd00;    /* Monk Yellow (preserved) */
+    --secondary-accent: #D35400;  /* Dark Orange - monk robe color */
+    --tertiary-accent: #6B8E23;   /* Olive Green (preserved) */
+    --magic: #ffdd00;             /* Monk Yellow (preserved) */
+    --energy: #6B8E23;            /* Olive Green (preserved) */
+    --forest-green: #3A5F3A;      /* Medium forest green - new */
     
-    /* Gradients - Updated for Monk Journey theme */
-    --gradient-dark: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);  /* Dark Olive to Olive */
-    --gradient-primary: linear-gradient(135deg, #6B8E23 0%, #556B2F 100%); /* Olive to Dark Olive */
-    --gradient-secondary: linear-gradient(135deg, #A0522D 0%, #ffdd00 100%); /* Brown to Yellow */
-    --gradient-accent: linear-gradient(135deg, #ffdd00 0%, #FF4500 100%); /* Yellow to Orange Red */
+    /* Gradients - Monk Journey theme with authentic colors */
+    --gradient-dark: linear-gradient(135deg, #2A3C28 0%, #3A5F3A 100%);  /* Dark Green to Medium Green */
+    --gradient-primary: linear-gradient(135deg, #2C3B22 0%, #4A6B3A 100%); /* Dark Green-Brown to Medium Green */
+    --gradient-secondary: linear-gradient(135deg, #D35400 0%, #6B8E23 100%); /* Dark Orange to Olive Green */
+    --gradient-accent: linear-gradient(135deg, #ffdd00 0%, #D35400 100%); /* Yellow to Dark Orange */
     
     /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.18), 0 2px 4px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.25), 0 5px 15px rgba(0, 0, 0, 0.15);
     
     /* Borders */
     --border-radius-md: 8px;
@@ -141,7 +142,7 @@ header h1 {
     border-radius: var(--border-radius-lg);
     display: flex;
     align-items: center;
-    background: rgba(85, 107, 47, 0.8); /* Dark olive green background */
+    background: rgba(44, 59, 34, 0.85); /* Dark green-brown background */
     border-left: 4px solid var(--primary-accent);
     /* Removed backdrop-filter for better performance */
     box-shadow: var(--shadow-md);
@@ -165,7 +166,7 @@ header h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-secondary); /* Brown to Yellow gradient */
+    background: var(--gradient-secondary); /* Blue to Green gradient */
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 0;
@@ -174,9 +175,9 @@ header h1 {
 .game-item:hover {
     transform: translateY(-3px); /* Reduced movement for better performance */
     box-shadow: var(--shadow-lg), 
-                0 0 10px rgba(255, 221, 0, 0.4); /* Monk yellow glow */
+                0 0 10px rgba(211, 84, 0, 0.4); /* Dark orange glow - monk robe color */
     border-left: 4px solid var(--magic);
-    background: rgba(107, 142, 35, 0.9); /* Lighter olive green on hover */
+    background: rgba(34, 48, 30, 0.9); /* Darker green on hover for contrast */
 }
 
 .game-item:hover::before {
@@ -189,8 +190,8 @@ header h1 {
     margin-right: 25px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-accent); /* Yellow border */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(160, 82, 45, 0.4); /* Brown glow */
+    border: 3px solid var(--primary-accent); /* Yellow border (preserved) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(211, 84, 0, 0.4); /* Dark orange glow - monk robe color */
     transition: all 0.4s ease;
     background-color: rgba(255, 255, 255, 0.08);
     padding: 5px;
@@ -200,8 +201,8 @@ header h1 {
 
 .game-item:hover img {
     transform: scale(1.1) rotate(5deg);
-    border-color: var(--magic); /* Yellow border */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 69, 0, 0.5); /* Orange-red glow */
+    border-color: var(--magic); /* Yellow border (preserved) */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(211, 84, 0, 0.5); /* Dark orange glow - monk robe color */
     background-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -279,20 +280,20 @@ header h1 {
     font-size: 0.75rem;
     padding: 4px 12px;
     border-radius: 20px;
-    background-color: rgba(160, 82, 45, 0.25); /* Brown background */
+    background-color: rgba(211, 84, 0, 0.25); /* Dark orange background - monk robe color */
     color: var(--text-primary);
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(160, 82, 45, 0.4); /* Brown border */
+    border: 1px solid rgba(211, 84, 0, 0.4); /* Dark orange border */
     box-shadow: var(--shadow-sm);
     backdrop-filter: blur(5px);
 }
 
 .game-item:hover .game-tag {
-    background-color: rgba(255, 221, 0, 0.25); /* Yellow background on hover */
+    background-color: rgba(107, 142, 35, 0.25); /* Olive green background on hover */
     transform: translateY(-2px);
-    border-color: rgba(255, 221, 0, 0.5); /* Yellow border on hover */
+    border-color: rgba(107, 142, 35, 0.5); /* Olive green border on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: var(--snow);
 }
@@ -341,18 +342,18 @@ header h1 {
 /* Button preview styles removed - not used in current implementation */
 
 .btn-play {
-    background: var(--gradient-accent); /* Yellow to Orange-Red gradient */
+    background: var(--gradient-accent); /* Yellow to Dark Orange gradient */
     color: var(--text-primary);
     width: 100%;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.3); /* Orange-Red shadow */
+    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3); /* Dark orange shadow - monk robe color */
     min-width: 120px;
     border-radius: var(--border-radius-md);
 }
 
 .btn-play:hover {
-    box-shadow: 0 6px 15px rgba(255, 69, 0, 0.5); /* Orange-Red shadow on hover */
+    box-shadow: 0 6px 15px rgba(211, 84, 0, 0.5); /* Dark orange shadow on hover */
     transform: translateY(-2px) scale(1.05);
     color: var(--snow);
 }
@@ -433,13 +434,13 @@ header h1 {
     }
 }
 
-/* Simplified pulse effect for the play button - using orange-red color */
+/* Simplified pulse effect for the play button - using dark orange color (monk robe) */
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.5); /* Orange-Red glow */
+        box-shadow: 0 0 0 0 rgba(211, 84, 0, 0.5); /* Dark orange glow */
     }
     50% {
-        box-shadow: 0 0 0 6px rgba(255, 69, 0, 0); /* Orange-Red fade */
+        box-shadow: 0 0 0 6px rgba(211, 84, 0, 0); /* Dark orange fade */
     }
 }
 
@@ -450,7 +451,7 @@ header h1 {
     }
 }
 
-/* Simplified background effect - static gradient for better performance */
+/* Enhanced background effect with more green tones */
 body::after {
     content: '';
     position: fixed;
@@ -459,9 +460,10 @@ body::after {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, 
-                rgba(255, 221, 0, 0.05), 
-                rgba(160, 82, 45, 0.05),
-                rgba(255, 69, 0, 0.03));
+                rgba(58, 95, 58, 0.12),  /* Forest green with higher opacity */
+                rgba(107, 142, 35, 0.15), /* Olive green with higher opacity */
+                rgba(74, 107, 58, 0.08), /* Medium green */
+                rgba(255, 221, 0, 0.03)); /* Yellow accent */
     /* Remove animation for better performance */
     z-index: -1;
 }
@@ -475,10 +477,10 @@ header::before {
     height: 100%;
     background: radial-gradient(circle at top right, 
                 rgba(255, 221, 0, 0.3), 
-                rgba(85, 107, 47, 0.8) 60%),
+                rgba(58, 95, 58, 0.8) 60%),  /* Forest green background */
                 radial-gradient(circle at bottom left, 
-                rgba(160, 82, 45, 0.3), 
-                rgba(85, 107, 47, 0.8) 60%);
+                rgba(211, 84, 0, 0.3), 
+                rgba(42, 60, 40, 0.8) 60%);  /* Dark green background */
     opacity: 1;
     z-index: 0;
 }
