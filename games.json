@@ -1,13 +1,13 @@
 {
   "games": [
     {
-      "id": "threejs-monk-journey",
-      "title": "Three.js Monk Journey",
+      "id": "monk-journey",
+      "title": "Monk Journey",
       "description": "Embark on a spiritual adventure through mystical landscapes",
       "icon": "50.svg",
       "iconAlt": "Monk Journey Icon",
-      "tags": ["Three.js", "Adventure"],
-      "previewTitle": "Three.js Monk Journey - Preview"
+      "tags": ["Adventure"],
+      "previewTitle": "Monk Journey - Preview"
     },
     {
       "id": "threejs-warrior",

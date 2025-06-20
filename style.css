@@ -49,25 +49,25 @@
 
 :root {
     /* Primary Colors */
-    --primary: #1a2639;
+    --primary: #6B8E23;    /* Olive Green as primary background */
     
     /* Text Colors */
     --text-primary: #ffffff;
-    --text-secondary: #b8c2cc;
+    --text-secondary: #e0e0e0;
     --snow: #f8f9fa;
     
-    /* Accent Colors */
-    --primary-accent: #3a5199;    /* Navy Blue */
-    --secondary-accent: #2d6a4f;  /* Forest Green */
-    --tertiary-accent: #c1121f;   /* Deep Red */
-    --magic: #4361ee;             /* Royal Blue */
-    --energy: #2d6a4f;            /* Forest Green */
+    /* Accent Colors - Updated for Monk Journey theme */
+    --primary-accent: #ffdd00;    /* Monk Yellow */
+    --secondary-accent: #A0522D;  /* Sienna Brown */
+    --tertiary-accent: #FF4500;   /* Orange Red */
+    --magic: #ffdd00;             /* Monk Yellow */
+    --energy: #A0522D;            /* Sienna Brown */
     
-    /* Gradients */
-    --gradient-dark: linear-gradient(135deg, #0d1b2a 0%, #1a2639 100%);
-    --gradient-primary: linear-gradient(135deg, #1a2639 0%, #2c3e50 100%);
-    --gradient-secondary: linear-gradient(135deg, #2d6a4f 0%, #3a5199 100%);
-    --gradient-accent: linear-gradient(135deg, #c1121f 0%, #3a5199 100%);
+    /* Gradients - Updated for Monk Journey theme */
+    --gradient-dark: linear-gradient(135deg, #556B2F 0%, #6B8E23 100%);  /* Dark Olive to Olive */
+    --gradient-primary: linear-gradient(135deg, #6B8E23 0%, #556B2F 100%); /* Olive to Dark Olive */
+    --gradient-secondary: linear-gradient(135deg, #A0522D 0%, #ffdd00 100%); /* Brown to Yellow */
+    --gradient-accent: linear-gradient(135deg, #ffdd00 0%, #FF4500 100%); /* Yellow to Orange Red */
     
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -131,7 +131,7 @@ header h1::after {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: var(--tertiary-accent);
+    background: var(--tertiary-accent); /* Orange Red */
     border-radius: 3px;
 }
 
@@ -153,14 +153,14 @@ header h1::after {
     border-radius: var(--border-radius-lg);
     display: flex;
     align-items: center;
-    background: rgba(46, 49, 73, 0.8);
+    background: rgba(85, 107, 47, 0.8); /* Dark olive green background */
     border-left: 4px solid var(--primary-accent);
     /* Removed backdrop-filter for better performance */
     box-shadow: var(--shadow-md);
     cursor: pointer;
     margin-bottom: 20px;
     overflow: hidden;
-    /* Add transitions only for desktop */
+    /* Simplified for better performance */
 }
 
 /* Apply transitions only on non-mobile devices */
@@ -177,18 +177,18 @@ header h1::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-secondary);
+    background: var(--gradient-secondary); /* Brown to Yellow gradient */
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 0;
 }
 
 .game-item:hover {
-    transform: translateY(-5px) scale(1.01);
+    transform: translateY(-3px); /* Reduced movement for better performance */
     box-shadow: var(--shadow-lg), 
-                0 0 15px rgba(108, 92, 231, 0.4);
+                0 0 10px rgba(255, 221, 0, 0.4); /* Monk yellow glow */
     border-left: 4px solid var(--magic);
-    background: rgba(50, 53, 78, 0.9);
+    background: rgba(107, 142, 35, 0.9); /* Lighter olive green on hover */
 }
 
 .game-item:hover::before {
@@ -201,8 +201,8 @@ header h1::after {
     margin-right: 25px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(58, 81, 153, 0.4);
+    border: 3px solid var(--primary-accent); /* Yellow border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(160, 82, 45, 0.4); /* Brown glow */
     transition: all 0.4s ease;
     background-color: rgba(255, 255, 255, 0.08);
     padding: 5px;
@@ -212,8 +212,8 @@ header h1::after {
 
 .game-item:hover img {
     transform: scale(1.1) rotate(5deg);
-    border-color: var(--magic);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(45, 106, 79, 0.5);
+    border-color: var(--magic); /* Yellow border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 69, 0, 0.5); /* Orange-red glow */
     background-color: rgba(255, 255, 255, 0.12);
 }
 
@@ -232,7 +232,7 @@ header h1::after {
     margin-bottom: 8px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1.2px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(58, 81, 153, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 221, 0, 0.3);
     position: relative;
     display: inline-block;
     transition: all 0.3s ease;
@@ -251,7 +251,7 @@ header h1::after {
 }
 
 .game-item:hover .game-title {
-    color: var(--tertiary-accent);
+    color: var(--primary-accent); /* Yellow text on hover */
     transform: translateX(5px);
 }
 
@@ -291,20 +291,20 @@ header h1::after {
     font-size: 0.75rem;
     padding: 4px 12px;
     border-radius: 20px;
-    background-color: rgba(58, 81, 153, 0.25);
+    background-color: rgba(160, 82, 45, 0.25); /* Brown background */
     color: var(--text-primary);
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(58, 81, 153, 0.4);
+    border: 1px solid rgba(160, 82, 45, 0.4); /* Brown border */
     box-shadow: var(--shadow-sm);
     backdrop-filter: blur(5px);
 }
 
 .game-item:hover .game-tag {
-    background-color: rgba(45, 106, 79, 0.25);
+    background-color: rgba(255, 221, 0, 0.25); /* Yellow background on hover */
     transform: translateY(-2px);
-    border-color: rgba(45, 106, 79, 0.5);
+    border-color: rgba(255, 221, 0, 0.5); /* Yellow border on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: var(--snow);
 }
@@ -351,31 +351,31 @@ header h1::after {
 }
 
 .btn-preview {
-    background: var(--gradient-secondary);
+    background: var(--gradient-secondary); /* Brown to Yellow gradient */
     color: var(--text-primary);
-    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.3);
+    box-shadow: 0 4px 10px rgba(160, 82, 45, 0.3); /* Brown shadow */
     border-radius: var(--border-radius-md);
 }
 
 .btn-preview:hover {
-    box-shadow: 0 6px 15px rgba(45, 106, 79, 0.5);
+    box-shadow: 0 6px 15px rgba(160, 82, 45, 0.5); /* Brown shadow on hover */
     transform: translateY(-2px);
     color: var(--snow);
 }
 
 .btn-play {
-    background: var(--gradient-accent);
+    background: var(--gradient-accent); /* Yellow to Orange-Red gradient */
     color: var(--text-primary);
     width: 100%;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(193, 18, 31, 0.3);
+    box-shadow: 0 4px 10px rgba(255, 69, 0, 0.3); /* Orange-Red shadow */
     min-width: 120px;
     border-radius: var(--border-radius-md);
 }
 
 .btn-play:hover {
-    box-shadow: 0 6px 15px rgba(193, 18, 31, 0.5);
+    box-shadow: 0 6px 15px rgba(255, 69, 0, 0.5); /* Orange-Red shadow on hover */
     transform: translateY(-2px) scale(1.05);
     color: var(--snow);
 }
@@ -394,7 +394,7 @@ header h1::after {
     margin-top: 0;
     margin-bottom: 25px;
     border-radius: var(--border-radius-lg);
-    background-color: rgba(42, 45, 67, 0.9);
+    background-color: rgba(85, 107, 47, 0.9); /* Dark olive green background */
     /* Removed backdrop-filter for better performance */
     will-change: opacity, transform; /* Hint to browser for optimization */
 }
@@ -402,7 +402,7 @@ header h1::after {
 .preview-container.active {
     display: block;
     height: 60vh; /* Fixed height instead of max-height */
-    border: 1px solid var(--energy);
+    border: 1px solid var(--energy); /* Brown border */
     box-shadow: var(--shadow-lg);
     animation: fadeIn 0.3s ease forwards; /* Simpler animation */
 }
@@ -422,7 +422,7 @@ header h1::after {
     width: 100%;
     height: calc(60vh - 50px); /* 50px accounts for the header */
     border: none;
-    background-color: rgba(26, 26, 46, 0.9);
+    background-color: rgba(85, 107, 47, 0.7); /* Lighter olive green background */
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     transition: all 0.3s ease;
@@ -433,10 +433,10 @@ header h1::after {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: var(--gradient-primary);
+    background: var(--gradient-primary); /* Olive green gradient */
     border-top-left-radius: var(--border-radius-lg);
     border-top-right-radius: var(--border-radius-lg);
-    border-bottom: 2px solid var(--energy);
+    border-bottom: 2px solid var(--primary-accent); /* Yellow border */
 }
 
 .preview-title {
@@ -465,7 +465,7 @@ header h1::after {
 
 .preview-close:hover {
     color: var(--snow);
-    background-color: rgba(193, 18, 31, 0.6);
+    background-color: rgba(255, 69, 0, 0.6); /* Orange-Red background */
     transform: rotate(90deg);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
@@ -518,62 +518,48 @@ header h1::after {
     }
 }
 
-/* Enhanced animations - optimized for performance */
+/* Simplified animations for better performance */
 .floating {
-    /* Only apply animation on desktop devices */
-    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+    /* Basic shadow without animation for all devices */
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
 }
 
-/* Apply animations only on non-mobile devices */
+/* Apply subtle animations only on non-mobile devices */
 @media (min-width: 768px) {
     .floating {
-        animation: float 6s ease-in-out infinite;
-        will-change: transform; /* Hint to browser for optimization */
+        animation: float 4s linear infinite;
+        /* Remove will-change to reduce memory usage when not needed */
     }
 }
 
+/* Simplified animation with linear movement - no bouncing effect */
 @keyframes float {
-    0% {
-        transform: translateY(0px);
+    0%, 100% {
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(0px);
+        transform: translateY(-3px);
     }
 }
 
-/* Add a subtle pulse effect to the play button */
+/* Simplified pulse effect for the play button - using orange-red color */
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(193, 18, 31, 0.6);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(193, 18, 31, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(193, 18, 31, 0);
-    }
-}
-
-.btn-play {
-    animation: pulse 2s infinite;
-}
-
-/* Add a subtle background animation */
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.5); /* Orange-Red glow */
     }
     50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+        box-shadow: 0 0 0 6px rgba(255, 69, 0, 0); /* Orange-Red fade */
     }
 }
 
+/* Only apply animation on non-mobile devices */
+@media (min-width: 768px) {
+    .btn-play {
+        animation: pulse 3s infinite;
+    }
+}
+
+/* Simplified background effect - static gradient for better performance */
 body::after {
     content: '';
     position: fixed;
@@ -582,11 +568,10 @@ body::after {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg, 
-                rgba(58, 81, 153, 0.07), 
-                rgba(45, 106, 79, 0.07),
-                rgba(193, 18, 31, 0.05));
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+                rgba(255, 221, 0, 0.05), 
+                rgba(160, 82, 45, 0.05),
+                rgba(255, 69, 0, 0.03));
+    /* Remove animation for better performance */
     z-index: -1;
 }
 
@@ -598,11 +583,11 @@ header::before {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at top right, 
-                rgba(45, 106, 79, 0.4), 
-                rgba(13, 27, 42, 0.8) 60%),
+                rgba(255, 221, 0, 0.3), 
+                rgba(85, 107, 47, 0.8) 60%),
                 radial-gradient(circle at bottom left, 
-                rgba(58, 81, 153, 0.4), 
-                rgba(13, 27, 42, 0.8) 60%);
+                rgba(160, 82, 45, 0.3), 
+                rgba(85, 107, 47, 0.8) 60%);
     opacity: 1;
     z-index: 0;
 }
