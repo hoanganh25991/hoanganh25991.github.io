@@ -101,7 +101,7 @@ body {
 header {
     background: var(--gradient-primary);
     color: var(--text-primary);
-    padding: 1rem 0;
+    padding: 2rem 0;
     text-align: center;
     position: sticky;
     top: 0;
@@ -119,12 +119,11 @@ header h1 {
     position: relative;
     z-index: 1;
     color: var(--snow);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 20px var(--magic);
     font-weight: 700;
 }
 
 .container {
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     background-color: transparent;
     max-width: 1200px;
     margin: 0 auto;
@@ -137,7 +136,7 @@ header h1 {
 
 .game-item {
     position: relative;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: var(--border-radius-lg);
     display: flex;
     flex-direction: column;
@@ -145,8 +144,8 @@ header h1 {
     border-left: 4px solid var(--primary-accent);
     /* Removed backdrop-filter for better performance */
     box-shadow: var(--shadow-md);
-    /* Removed cursor: pointer since items are no longer clickable */
-    margin-bottom: 1rem;
+    cursor: pointer; /* Make it clear the card is clickable */
+    margin-bottom: 2rem;
     overflow: hidden;
     /* No transitions by default for better mobile performance */
 }
@@ -180,16 +179,40 @@ header h1 {
     z-index: 1;
 }
 
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+}
+
 .game-title {
     font-size: 1.4rem; /* Smaller for mobile */
     font-weight: bold;
     color: var(--snow);
-    margin-bottom: 6px;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     position: relative;
     display: inline-block;
+    flex-grow: 1;
+}
+
+.play-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-sm);
+    opacity: 0.8;
+    flex-shrink: 0;
+    margin-left: 10px;
+    transition: all 0.2s ease;
 }
 
 .game-title::after {
@@ -254,80 +277,31 @@ header h1 {
     color: var(--snow);
 }
 
-.game-actions {
-    display: block;
-    margin: 15px 0 0 0; /* Top margin only */
-    width: 100%; /* Full width */
-    position: relative;
-    z-index: 1;
-    padding-top: 10px;
-    box-sizing: border-box; /* Ensure padding is included in width */
-}
-
-.btn {
-    padding: 10px 15px; /* Smaller padding for mobile */
-    font-size: 0.85rem; /* Smaller font for mobile */
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    font-weight: 700;
-    display: block; /* Changed to block for full width */
-    align-items: center;
-    justify-content: center; /* Center content for mobile */
-    gap: 8px; /* Less gap for mobile */
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    overflow: hidden;
-    width: 100%; /* Ensure full width */
-    box-sizing: border-box; /* Ensure padding is included in width */
-}
-
-/* Simplified button effect for mobile */
-.btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-}
-
-.btn:active::after {
+.game-item:active .play-indicator {
     opacity: 1;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
 }
 
-/* Button preview styles removed - not used in current implementation */
-
-.btn-play {
-    background: var(--gradient-accent); /* Yellow to Dark Orange gradient */
-    color: var(--text-primary);
-    width: 100%;
-    text-decoration: none;
-    box-shadow: 0 3px 8px rgba(211, 84, 0, 0.3); /* Lighter shadow for mobile */
-    border-radius: var(--border-radius-md);
-    padding: 15px 20px; /* Larger padding for more prominence */
-    font-size: 1.1rem; /* Larger font size */
-    text-align: center; /* Center text */
-    display: flex; /* Use flex for icon alignment */
-    justify-content: center; /* Center content */
-    align-items: center; /* Align items vertically */
-    box-sizing: border-box; /* Ensure padding is included in width */
-    margin: 0 auto; /* Center the button */
+.click-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    font-style: italic;
+    z-index: 1;
+    pointer-events: none;
+    transition: all 0.2s ease;
 }
 
-/* Active state for mobile touch */
-.btn-play:active {
-    box-shadow: 0 2px 5px rgba(211, 84, 0, 0.5);
-    color: var(--snow);
+.game-item:active .click-hint {
+    opacity: 1;
+    color: var(--primary-accent);
 }
 
-/* Active state for icon */
-.btn-play:active i {
-    opacity: 0.8;
-}
+/* Old button styles removed - now using clickable cards */
 
 /* Preview functionality has been removed */
 
@@ -504,7 +478,7 @@ body::after {
 
 .welcome-content {
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
     width: 90%;
     max-width: 600px;
     background: rgba(44, 59, 34, 0.8);
@@ -529,7 +503,7 @@ body::after {
 .welcome-content h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: var(--primary-accent);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -559,7 +533,7 @@ body::after {
     background: var(--gradient-accent);
     color: var(--text-primary);
     border: none;
-    padding: 1rem 2rem;
+    padding: 1.5rem;
     font-size: 1.2rem;
     border-radius: var(--border-radius-md);
     cursor: pointer;
@@ -571,6 +545,8 @@ body::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    width: 100%;
+    justify-content: center;
     animation: welcome-pulse 2s infinite;
 }
 
@@ -600,23 +576,6 @@ body::after {
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, 
-                rgba(255, 221, 0, 0.3), 
-                rgba(58, 95, 58, 0.8) 60%),  /* Forest green background */
-                radial-gradient(circle at bottom left, 
-                rgba(211, 84, 0, 0.3), 
-                rgba(42, 60, 40, 0.8) 60%);  /* Dark green background */
-    opacity: 1;
-    z-index: 0;
-}
-
 /* Desktop styles - apply only for larger screens */
 @media (min-width: 769px) {
     .game-item {
@@ -643,6 +602,17 @@ header::before {
         color: var(--snow);
     }
     
+    .game-item:hover .play-indicator {
+        opacity: 1;
+        transform: scale(1.1);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .game-item:hover .click-hint {
+        opacity: 1;
+        color: var(--primary-accent);
+    }
+    
     /* Image styles removed as images are no longer used */
     
     .game-title {
@@ -659,15 +629,13 @@ header::before {
         padding: 4px 12px;
     }
     
-    .game-actions {
-        margin-top: 0;
-        width: auto;
-        margin-left: auto;
+    .play-indicator {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
     }
     
-    .btn {
-        padding: 12px 20px;
-        font-size: 0.9rem;
-        flex: none;
+    .click-hint {
+        font-size: 0.8rem;
     }
 }

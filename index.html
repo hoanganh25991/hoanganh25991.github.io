@@ -117,15 +117,24 @@
             gameList.innerHTML = '';
 
             games.forEach(game => {
-                // Create game item
+                // Create game item as a clickable link
                 const gameItem = document.createElement('li');
                 gameItem.className = 'game-item';
-                // Removed onclick handler to prevent preview functionality
+                
+                // Make the entire card clickable
+                gameItem.addEventListener('click', () => {
+                    window.location.href = game.id;
+                });
 
-                // Create game HTML
+                // Create game HTML with play indicator
                 gameItem.innerHTML = `
                     <div class="game-info">
-                        <div class="game-title">${game.title}</div>
+                        <div class="game-header">
+                            <div class="game-title">${game.title}</div>
+                            <div class="play-indicator">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
                         <div class="game-content">
                             <div class="game-description">${game.description}</div>
                             <div class="game-tags">
@@ -133,21 +142,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="click-hint">
+                        <span>Click to play</span>
+                    </div>
                 `;
-                
-                // Create a separate play button element with inline styles
-                const playButton = document.createElement('div');
-                playButton.className = 'game-actions';
-                playButton.style.width = '100%';
-                playButton.style.display = 'block';
-                playButton.innerHTML = `
-                    <a href="${game.id}" class="btn btn-play" style="width:100%; display:block; text-align:center;">
-                        <i class="fas fa-play"></i> Play
-                    </a>
-                `;
-                
-                // Append both to the game item
-                gameItem.appendChild(playButton);
 
                 // Add to DOM
                 gameList.appendChild(gameItem);
@@ -165,10 +163,45 @@
             gameList.style.opacity = '0';
             gameList.style.visibility = 'hidden';
             
+            // Track audio state for page visibility handling
+            let wasPlayingBeforeHidden = false;
+            
             // Auto-pause audio when window loses focus
             window.addEventListener('blur', () => {
                 if (!audioElement.paused) {
+                    wasPlayingBeforeHidden = true;
                     audioElement.pause();
+                } else {
+                    wasPlayingBeforeHidden = false;
+                }
+            });
+            
+            // Resume audio when window gains focus
+            window.addEventListener('focus', () => {
+                if (wasPlayingBeforeHidden && audioElement.paused) {
+                    audioElement.play().catch(error => {
+                        console.log("Couldn't resume audio on focus:", error);
+                    });
+                }
+            });
+            
+            // Handle page visibility changes (more reliable than focus/blur)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    // Page is hidden - pause audio if playing
+                    if (!audioElement.paused) {
+                        wasPlayingBeforeHidden = true;
+                        audioElement.pause();
+                    } else {
+                        wasPlayingBeforeHidden = false;
+                    }
+                } else {
+                    // Page is visible again - resume audio if it was playing before
+                    if (wasPlayingBeforeHidden && audioElement.paused) {
+                        audioElement.play().catch(error => {
+                            console.log("Couldn't resume audio on visibility change:", error);
+                        });
+                    }
                 }
             });
             
