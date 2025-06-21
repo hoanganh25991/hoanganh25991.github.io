@@ -1,0 +1,444 @@
+/* ========================================
+   Enhanced Particles System with Mesh Network Effect
+   ======================================== */
+
+/* Particles Container */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Base particle styles with enhanced glow effect */
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, var(--primary-accent) 0%, rgba(255, 204, 0, 0.3) 70%, transparent 100%);
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5), 0 0 20px rgba(255, 204, 0, 0.2);
+}
+
+/* Create mesh-like connection lines using pseudo-elements */
+.particle::before,
+.particle::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 204, 0, 0.3) 50%, transparent 100%);
+    opacity: 0.4;
+    animation: connection-pulse 4s ease-in-out infinite;
+}
+
+.particle::before {
+    width: 120px;
+    height: 1px;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%) rotate(15deg);
+    transform-origin: left center;
+}
+
+.particle::after {
+    width: 80px;
+    height: 1px;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%) rotate(-25deg);
+    transform-origin: left center;
+    animation-delay: -2s;
+}
+
+/* Enhanced particle animations with more complex paths */
+.particle:nth-child(1) {
+    top: 15%;
+    left: 8%;
+    animation: particle-orbit-1 20s linear infinite;
+    --particle-size: 10px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(2) {
+    top: 65%;
+    left: 25%;
+    animation: particle-orbit-2 25s linear infinite;
+    animation-delay: -5s;
+    --particle-size: 6px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(3) {
+    top: 35%;
+    left: 45%;
+    animation: particle-spiral 18s linear infinite;
+    animation-delay: -2s;
+    --particle-size: 8px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(4) {
+    top: 8%;
+    left: 65%;
+    animation: particle-wave 22s ease-in-out infinite;
+    animation-delay: -7s;
+    --particle-size: 12px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(5) {
+    top: 55%;
+    left: 75%;
+    animation: particle-orbit-3 16s linear infinite;
+    animation-delay: -3s;
+    --particle-size: 7px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(6) {
+    top: 25%;
+    left: 20%;
+    animation: particle-figure-eight 24s ease-in-out infinite;
+    animation-delay: -10s;
+    --particle-size: 9px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(7) {
+    top: 75%;
+    left: 40%;
+    animation: particle-pendulum 21s ease-in-out infinite;
+    animation-delay: -8s;
+    --particle-size: 11px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(8) {
+    top: 12%;
+    left: 60%;
+    animation: particle-spiral-reverse 19s linear infinite;
+    animation-delay: -4s;
+    --particle-size: 6px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(9) {
+    top: 45%;
+    left: 80%;
+    animation: particle-orbit-4 23s linear infinite;
+    animation-delay: -6s;
+    --particle-size: 8px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(10) {
+    top: 70%;
+    left: 12%;
+    animation: particle-wave-reverse 17s ease-in-out infinite;
+    animation-delay: -9s;
+    --particle-size: 10px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+/* Additional particles for richer effect */
+.particle:nth-child(11) {
+    top: 30%;
+    left: 90%;
+    animation: particle-orbit-1 18s linear infinite;
+    animation-delay: -12s;
+    --particle-size: 7px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(12) {
+    top: 85%;
+    left: 60%;
+    animation: particle-figure-eight 26s ease-in-out infinite;
+    animation-delay: -15s;
+    --particle-size: 9px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(13) {
+    top: 5%;
+    left: 35%;
+    animation: particle-wave 20s ease-in-out infinite;
+    animation-delay: -18s;
+    --particle-size: 8px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(14) {
+    top: 50%;
+    left: 5%;
+    animation: particle-orbit-3 24s linear infinite;
+    animation-delay: -21s;
+    --particle-size: 11px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(15) {
+    top: 20%;
+    left: 75%;
+    animation: particle-pendulum 19s ease-in-out infinite;
+    animation-delay: -24s;
+    --particle-size: 6px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(16) {
+    top: 90%;
+    left: 20%;
+    animation: particle-spiral 22s linear infinite;
+    animation-delay: -27s;
+    --particle-size: 10px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(17) {
+    top: 40%;
+    left: 95%;
+    animation: particle-wave-reverse 21s ease-in-out infinite;
+    animation-delay: -30s;
+    --particle-size: 7px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(18) {
+    top: 60%;
+    left: 50%;
+    animation: particle-orbit-2 27s linear infinite;
+    animation-delay: -33s;
+    --particle-size: 9px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(19) {
+    top: 25%;
+    left: 55%;
+    animation: particle-figure-eight 23s ease-in-out infinite;
+    animation-delay: -36s;
+    --particle-size: 8px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+.particle:nth-child(20) {
+    top: 80%;
+    left: 85%;
+    animation: particle-orbit-4 25s linear infinite;
+    animation-delay: -39s;
+    --particle-size: 12px;
+    width: var(--particle-size);
+    height: var(--particle-size);
+}
+
+/* ========================================
+   Advanced Particle Animation Keyframes
+   ======================================== */
+
+@keyframes particle-orbit-1 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(60px, -30px) rotate(90deg); }
+    50% { transform: translate(120px, 0) rotate(180deg); }
+    75% { transform: translate(60px, 30px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes particle-orbit-2 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    25% { transform: translate(-40px, -60px) rotate(90deg) scale(1.2); }
+    50% { transform: translate(-80px, 0) rotate(180deg) scale(0.8); }
+    75% { transform: translate(-40px, 60px) rotate(270deg) scale(1.1); }
+    100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+@keyframes particle-orbit-3 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(50px, -40px) rotate(120deg); }
+    66% { transform: translate(-25px, 35px) rotate(240deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes particle-orbit-4 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    20% { transform: translate(-30px, -50px) rotate(72deg) scale(1.3); }
+    40% { transform: translate(-60px, 20px) rotate(144deg) scale(0.7); }
+    60% { transform: translate(0, 60px) rotate(216deg) scale(1.1); }
+    80% { transform: translate(40px, -10px) rotate(288deg) scale(0.9); }
+    100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+}
+
+@keyframes particle-spiral {
+    0% { 
+        transform: translate(0, 0) rotate(0deg); 
+    }
+    25% {
+        transform: translate(30px, -30px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, -60px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-30px, -30px) rotate(270deg);
+    }
+    100% { 
+        transform: translate(0, 0) rotate(360deg); 
+    }
+}
+
+@keyframes particle-spiral-reverse {
+    0% { transform: translate(0, 0) rotate(360deg); }
+    25% { transform: translate(-30px, 30px) rotate(270deg); }
+    50% { transform: translate(0, 60px) rotate(180deg); }
+    75% { transform: translate(30px, 30px) rotate(90deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes particle-wave {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(40px) translateY(-20px); }
+    50% { transform: translateX(80px) translateY(0); }
+    75% { transform: translateX(40px) translateY(20px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes particle-wave-reverse {
+    0% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-40px) translateY(20px); }
+    50% { transform: translateX(-80px) translateY(0); }
+    75% { transform: translateX(-40px) translateY(-20px); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes particle-figure-eight {
+    0% { transform: translate(0, 0); }
+    12.5% { transform: translate(30px, -15px); }
+    25% { transform: translate(0, -30px); }
+    37.5% { transform: translate(-30px, -15px); }
+    50% { transform: translate(0, 0); }
+    62.5% { transform: translate(30px, 15px); }
+    75% { transform: translate(0, 30px); }
+    87.5% { transform: translate(-30px, 15px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes particle-pendulum {
+    0%, 100% { transform: rotate(-30deg) translateX(50px) rotate(30deg); }
+    50% { transform: rotate(30deg) translateX(50px) rotate(-30deg); }
+}
+
+@keyframes connection-pulse {
+    0%, 100% { opacity: 0.2; transform: scaleX(0.5); }
+    50% { opacity: 0.6; transform: scaleX(1); }
+}
+
+/* ========================================
+   Particle Glow Effects
+   ======================================== */
+
+@keyframes particle-glow {
+    0%, 100% { 
+        box-shadow: 0 0 5px rgba(255, 204, 0, 0.3), 0 0 10px rgba(255, 204, 0, 0.1);
+        opacity: 0.6;
+    }
+    50% { 
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), 0 0 25px rgba(255, 204, 0, 0.3);
+        opacity: 1;
+    }
+}
+
+@keyframes particle-pulse {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Apply glow animation to random particles */
+.particle:nth-child(2n) {
+    animation-name: particle-orbit-2, particle-glow;
+    animation-duration: 25s, 3s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, ease-in-out;
+}
+
+.particle:nth-child(3n) {
+    animation-name: particle-spiral, particle-glow;
+    animation-duration: 18s, 4s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, ease-in-out;
+    animation-delay: -2s, -1s;
+}
+
+.particle:nth-child(5n) {
+    animation-name: particle-figure-eight, particle-pulse;
+    animation-duration: 24s, 2.5s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-delay: -10s, -0.5s;
+}
+
+/* ========================================
+   Responsive Particle Adjustments
+   ======================================== */
+
+/* Reduce particle complexity on mobile for better performance */
+@media (max-width: 768px) {
+    .particle::before,
+    .particle::after {
+        display: none; /* Hide connection lines on mobile */
+    }
+    
+    .particle {
+        width: 6px;
+        height: 6px;
+        box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+    }
+    
+    /* Simplify animations on mobile */
+    .particle:nth-child(n+11) {
+        display: none; /* Hide extra particles on mobile */
+    }
+}
+
+/* Enhanced effects for larger screens */
+@media (min-width: 1200px) {
+    .particle {
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), 0 0 30px rgba(255, 204, 0, 0.3);
+    }
+    
+    .particle::before {
+        width: 150px;
+    }
+    
+    .particle::after {
+        width: 100px;
+    }
+}
