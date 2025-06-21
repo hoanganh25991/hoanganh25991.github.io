@@ -255,7 +255,7 @@ header h1 {
 }
 
 .game-actions {
-    display: block; /* Changed from flex to block */
+    display: block;
     margin: 15px 0 0 0; /* Top margin only */
     width: 100%; /* Full width */
     position: relative;

@@ -133,12 +133,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="game-actions">
-                        <a href="${game.id}" class="btn btn-play" style="width:100%; display:block;">
-                            <i class="fas fa-play"></i> Play
-                        </a>
-                    </div>
                 `;
+                
+                // Create a separate play button element with inline styles
+                const playButton = document.createElement('div');
+                playButton.className = 'game-actions';
+                playButton.style.width = '100%';
+                playButton.style.display = 'block';
+                playButton.innerHTML = `
+                    <a href="${game.id}" class="btn btn-play" style="width:100%; display:block; text-align:center;">
+                        <i class="fas fa-play"></i> Play
+                    </a>
+                `;
+                
+                // Append both to the game item
+                gameItem.appendChild(playButton);
 
                 // Add to DOM
                 gameList.appendChild(gameItem);
