@@ -53,14 +53,14 @@
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="particles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/particles.css">
 </head>
 <body>
     <header>
         <h1>Game Collection</h1>
         <audio id="background-music" loop>
-            <source src="sia-unstoppable.mp3" type="audio/mpeg">
+            <source src="assets/audio/sia-unstoppable.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
     </header>
@@ -101,53 +101,6 @@
                 renderGames(data.games);
             } catch (error) {
                 console.error('Error loading games:', error);
-            }
-        }
-
-        // Generate particles dynamically
-        function generateParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 100;
-            
-            // Animation types available
-            const animations = [
-                'particle-orbit-1', 'particle-orbit-2', 'particle-orbit-3', 'particle-orbit-4',
-                'particle-spiral', 'particle-spiral-reverse', 'particle-wave', 'particle-wave-reverse',
-                'particle-figure-eight', 'particle-pendulum'
-            ];
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Random positioning
-                const top = Math.random() * 100;
-                const left = Math.random() * 100;
-                
-                // Random size between 6px and 12px
-                const size = Math.floor(Math.random() * 7) + 6;
-                
-                // Random animation
-                const animationType = animations[Math.floor(Math.random() * animations.length)];
-                const duration = Math.floor(Math.random() * 15) + 15; // 15-30 seconds
-                const delay = Math.random() * -40; // Random delay up to -40s
-                
-                // Apply styles
-                particle.style.cssText = `
-                    top: ${top}%;
-                    left: ${left}%;
-                    width: ${size}px;
-                    height: ${size}px;
-                    animation: ${animationType} ${duration}s linear infinite;
-                    animation-delay: ${delay}s;
-                `;
-                
-                // Add glow effect to some particles
-                if (Math.random() > 0.7) {
-                    particle.style.animation += `, particle-glow ${Math.floor(Math.random() * 3) + 3}s ease-in-out infinite`;
-                }
-                
-                particlesContainer.appendChild(particle);
             }
         }
 
@@ -274,5 +227,6 @@
             });
         }
     </script>
+    <script src="js/particles.js"></script>
 </body>
 </html>
