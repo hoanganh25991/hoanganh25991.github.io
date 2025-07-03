@@ -6,44 +6,47 @@
       "description": "Embark on a spiritual adventure through mystical landscapes",
       "icon": "icon.svg",
       "iconAlt": "Monk Journey Icon",
-      "tags": ["Adventure"],
-      "previewTitle": "Monk Journey - Preview"
+      "tags": ["monk", "adventure", "three.js"]
     },
     {
       "id": "threejs-warrior",
-      "title": "Three.js Warrior",
+      "title": "Warrior",
       "description": "Original warrior game with immersive 3D environments",
       "icon": "icon.svg",
-      "iconAlt": "Three.js Warrior Icon",
-      "tags": ["Three.js", "Action"],
-      "previewTitle": "Three.js Warrior - Preview"
+      "iconAlt": "three.js Warrior Icon",
+      "tags": ["action", "three.js"]
+    },
+      {
+      "id": "tank-adventure",
+      "title": "Tank Adventure",
+      "description": "A complete 2D tank battle game designed for mobile and tablet devices with touch controls",
+      "icon": "icon.svg",
+      "iconAlt": "Tank adventure",
+      "tags": ["adventure", "tank", "js", "html"]
     },
     {
       "id": "p5js-squad",
-      "title": "P5.js Squad",
+      "title": "Soldier Squad",
       "description": "Lead a squad through challenging tactical missions",
       "icon": "icon.svg",
-      "iconAlt": "P5.js Squad Icon",
-      "tags": ["P5.js", "Strategy", "Team"],
-      "previewTitle": "P5.js Squad - Preview"
+      "iconAlt": "p5.js Squad Icon",
+      "tags": ["action", "p5.js"]
     },
     {
       "id": "p5js-soldier",
-      "title": "P5.js Soldier",
+      "title": "Tower Soldier",
       "description": "Strategic combat simulation with creative visuals",
       "icon": "icon.svg",
-      "iconAlt": "P5.js Soldier Icon",
-      "tags": ["P5.js", "Strategy"],
-      "previewTitle": "P5.js Soldier - Preview"
+      "iconAlt": "p5.js Soldier Icon",
+      "tags": ["action", "soldier", "p5.js"]
     },
     {
       "id": "p5js-tank",
-      "title": "P5.js Tank",
+      "title": "Tank",
       "description": "Command powerful tanks in intense battlefield scenarios",
       "icon": "icon.svg",
-      "iconAlt": "P5.js Tank Icon",
-      "tags": ["P5.js", "Action"],
-      "previewTitle": "P5.js Tank - Preview"
+      "iconAlt": "p5.js Tank Icon",
+      "tags": ["action", "tank", "p5.js"]
     }
   ]
 }
