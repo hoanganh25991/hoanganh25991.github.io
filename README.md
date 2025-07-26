@@ -17,3 +17,11 @@ This GitHub Pages repository hosts a collection of web development projects, pri
 - `index.html` - The main entry point that currently displays the game list
 - Individual project directories for each game/application
 - Shared assets and resources
+
+## License
+
+Copyright © 2025 Monk Journey Team. All Rights Reserved.
+
+This project is proprietary and confidential. Unauthorized reproduction, distribution, or disclosure is prohibited. No license, express or implied, to any intellectual property rights is granted by this document.
+
+See the [LICENSE](LICENSE) file for full details.
