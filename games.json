@@ -47,6 +47,22 @@
       "icon": "icon.svg",
       "iconAlt": "p5.js Tank Icon",
       "tags": ["action", "tank", "p5.js"]
+    },
+    {
+      "id": "bul-game",
+      "title": "Bắn Tăng",
+      "description": "Trò chơi bắn tăng 2D hoàn chỉnh, thiết kế cho thiết bị di động và máy tính bảng với điều khiển cảm ứng",
+      "icon": "icon.svg",
+      "iconAlt": "p5.js Tank Icon",
+      "tags": ["action", "tank"]
+    },
+    {
+      "id": "bul-game-02",
+      "title": "Chiến trường quân đội",
+      "description": "Trò chơi chiến thuật với đồ họa sáng tạo",
+      "icon": "icon.svg",
+      "iconAlt": "p5.js Tank Icon",
+      "tags": ["action"]
     }
   ]
 }
