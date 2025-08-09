@@ -5,64 +5,72 @@
       "title": "Monk Journey",
       "description": "Embark on a spiritual adventure through mystical landscapes",
       "icon": "icon.svg",
-      "iconAlt": "Monk Journey Icon",
-      "tags": ["monk", "adventure", "three.js"]
+      "iconAlt": "Monk Icon",
+      "tags": ["monk", "adventure"]
     },
     {
       "id": "threejs-warrior",
       "title": "Warrior",
       "description": "Original warrior game with immersive 3D environments",
       "icon": "icon.svg",
-      "iconAlt": "three.js Warrior Icon",
-      "tags": ["action", "three.js"]
+      "iconAlt": "Warrior Icon",
+      "tags": ["warrior", "action"]
     },
       {
       "id": "tank-adventure",
       "title": "Tank Adventure",
       "description": "A complete 2D tank battle game designed for mobile and tablet devices with touch controls",
       "icon": "icon.svg",
-      "iconAlt": "Tank adventure",
-      "tags": ["adventure", "tank", "js", "html"]
+      "iconAlt": "Tank Icon",
+      "tags": ["tank", "adventure"]
     },
     {
       "id": "p5js-squad",
       "title": "Soldier Squad",
       "description": "Lead a squad through challenging tactical missions",
       "icon": "icon.svg",
-      "iconAlt": "p5.js Squad Icon",
-      "tags": ["action", "p5.js"]
+      "iconAlt": "Squad Icon",
+      "tags": ["squad", "action"]
     },
     {
       "id": "p5js-soldier",
       "title": "Tower Soldier",
       "description": "Strategic combat simulation with creative visuals",
       "icon": "icon.svg",
-      "iconAlt": "p5.js Soldier Icon",
-      "tags": ["action", "soldier", "p5.js"]
+      "iconAlt": "Soldier Icon",
+      "tags": ["soldier", "action"]
     },
     {
       "id": "p5js-tank",
       "title": "Tank",
       "description": "Command powerful tanks in intense battlefield scenarios",
       "icon": "icon.svg",
-      "iconAlt": "p5.js Tank Icon",
-      "tags": ["action", "tank", "p5.js"]
+      "iconAlt": "Tank Icon",
+      "tags": ["action", "tank"]
     },
     {
       "id": "bul-game",
       "title": "Bắn Tăng",
       "description": "Trò chơi bắn tăng 2D hoàn chỉnh, thiết kế cho thiết bị di động và máy tính bảng với điều khiển cảm ứng",
       "icon": "icon.svg",
-      "iconAlt": "p5.js Tank Icon",
-      "tags": ["action", "tank"]
+      "iconAlt": "Tank Icon",
+      "tags": ["tank", "action"]
     },
     {
       "id": "bul-game-02",
       "title": "Chiến trường quân đội",
       "description": "Trò chơi chiến thuật với đồ họa sáng tạo",
       "icon": "icon.svg",
-      "iconAlt": "p5.js Tank Icon",
-      "tags": ["action"]
+      "iconAlt": "Battlefield Icon",
+      "tags": ["battlefield", "strategy"]
+    },
+    {
+      "id": "bul-game-03",
+      "title": "Hành trình anh hùng",
+      "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
     }
   ]
 }
