@@ -71,6 +71,62 @@
       "icon": "icon.svg",
       "iconAlt": "",
       "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "bul-game-04",
+      "title": "Hành trình anh hùng",
+      "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "bul-game-05",
+      "title": "Hành trình anh hùng",
+      "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "bul-game-06",
+      "title": "Hành trình anh hùng",
+      "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "bul-game-07",
+      "title": "Hành trình anh hùng",
+      "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "bul-game-08",
+      "title": "Hành trình anh hùng",
+      "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "bul-game-09",
+      "title": "Hành trình anh hùng",
+      "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "bul-game-10",
+      "title": "Thần Sấm Mãi Đỉnh",
+      "description": "Điều khiển Thần Sấm khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
     }
   ]
 }
