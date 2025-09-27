@@ -13,14 +13,25 @@
   },
   {
     "relation": [
-      "delegate_permission/common.handle_all_urls",
-      "delegate_permission/common.get_login_creds"
+      "delegate_permission/common.handle_all_urls"
     ],
     "target": {
       "namespace": "android_app",
       "package_name": "io.github.hoanganh25991.got",
       "sha256_cert_fingerprints": [
         "01:F9:0B:2A:8A:DB:70:6E:58:5C:61:FE:A7:4E:E8:73:26:BE:05:E2:87:72:3F:B5:B6:3F:5F:EA:2F:C4:CA:23"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hoanganh25991.gotsignature",
+      "sha256_cert_fingerprints": [
+        "51:5A:6E:C7:77:4E:4C:A0:CB:7C:29:B2:CE:E2:54:A8:09:BA:FA:4E:44:8F:4B:63:6E:CD:E5:5C:63:F4:B7:08"
       ]
     }
   }
