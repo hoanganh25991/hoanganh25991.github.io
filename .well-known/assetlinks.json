@@ -10,5 +10,17 @@
         "D1:74:3D:86:DA:06:34:4E:B3:7D:0B:D9:0F:83:97:10:97:B6:B8:37:5F:AB:52:58:17:1B:52:BE:39:07:43:F5"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hoanganh25991.got",
+      "sha256_cert_fingerprints": [
+        "01:F9:0B:2A:8A:DB:70:6E:58:5C:61:FE:A7:4E:E8:73:26:BE:05:E2:87:72:3F:B5:B6:3F:5F:EA:2F:C4:CA:23"
+      ]
+    }
   }
 ]
