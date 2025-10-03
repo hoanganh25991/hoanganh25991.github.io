@@ -127,6 +127,14 @@
       "icon": "icon.svg",
       "iconAlt": "",
       "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "game-gof",
+      "title": "Hoả Thần Mãi Đỉnh",
+      "description": "Điều khiển Hoả Thần khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
     }
   ]
 }
