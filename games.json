@@ -135,6 +135,14 @@
       "icon": "icon.svg",
       "iconAlt": "",
       "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "game-gow",
+      "title": "Thuỷ Thần Mãi Đỉnh",
+      "description": "Điều khiển Thuỷ Thần khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
     }
   ]
 }
