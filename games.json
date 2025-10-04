@@ -151,6 +151,14 @@
       "icon": "icon.svg",
       "iconAlt": "",
       "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "game-goa",
+      "title": "Phong Thần Mãi Đỉnh",
+      "description": "Điều khiển Phong Thần khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
     }
   ]
 }
