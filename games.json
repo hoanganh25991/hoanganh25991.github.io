@@ -143,6 +143,14 @@
       "icon": "icon.svg",
       "iconAlt": "",
       "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "game-goe",
+      "title": "Thần Đất Mãi Đỉnh",
+      "description": "Điều khiển Thần Đất khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
     }
   ]
 }
