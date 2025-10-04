@@ -159,6 +159,14 @@
       "icon": "icon.svg",
       "iconAlt": "",
       "tags": ["hero", "action", "adventure"]
+    },
+    {
+      "id": "game-gom",
+      "title": "Thần Kim Loại Mãi Đỉnh",
+      "description": "Điều khiển Thần Kim Loại khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": ["hero", "action", "adventure"]
     }
   ]
 }
