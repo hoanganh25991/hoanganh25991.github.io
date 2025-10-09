@@ -46,5 +46,17 @@
         "8C:41:45:78:8B:28:EF:64:D9:04:B9:61:2A:86:6D:A9:67:D5:50:FA:54:37:AB:80:6F:51:19:66:64:51:2F:52"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hoanganh25991.edssignature",
+      "sha256_cert_fingerprints": [
+        "5E:CB:8B:35:4A:8D:21:70:1D:1C:99:9D:52:65:80:33:79:91:61:F0:B2:BE:93:9E:D7:6A:F4:12:4B:E1:CE:9E"
+      ]
+    }
   }
 ]

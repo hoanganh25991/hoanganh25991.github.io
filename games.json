@@ -6,7 +6,10 @@
       "description": "Embark on a spiritual adventure through mystical landscapes",
       "icon": "icon.svg",
       "iconAlt": "Monk Icon",
-      "tags": ["monk", "adventure"]
+      "tags": [
+        "monk",
+        "adventure"
+      ]
     },
     {
       "id": "threejs-warrior",
@@ -14,15 +17,21 @@
       "description": "Original warrior game with immersive 3D environments",
       "icon": "icon.svg",
       "iconAlt": "Warrior Icon",
-      "tags": ["warrior", "action"]
+      "tags": [
+        "warrior",
+        "action"
+      ]
     },
-      {
+    {
       "id": "tank-adventure",
       "title": "Tank Adventure",
       "description": "A complete 2D tank battle game designed for mobile and tablet devices with touch controls",
       "icon": "icon.svg",
       "iconAlt": "Tank Icon",
-      "tags": ["tank", "adventure"]
+      "tags": [
+        "tank",
+        "adventure"
+      ]
     },
     {
       "id": "p5js-squad",
@@ -30,7 +39,10 @@
       "description": "Lead a squad through challenging tactical missions",
       "icon": "icon.svg",
       "iconAlt": "Squad Icon",
-      "tags": ["squad", "action"]
+      "tags": [
+        "squad",
+        "action"
+      ]
     },
     {
       "id": "p5js-soldier",
@@ -38,7 +50,10 @@
       "description": "Strategic combat simulation with creative visuals",
       "icon": "icon.svg",
       "iconAlt": "Soldier Icon",
-      "tags": ["soldier", "action"]
+      "tags": [
+        "soldier",
+        "action"
+      ]
     },
     {
       "id": "p5js-tank",
@@ -46,7 +61,10 @@
       "description": "Command powerful tanks in intense battlefield scenarios",
       "icon": "icon.svg",
       "iconAlt": "Tank Icon",
-      "tags": ["action", "tank"]
+      "tags": [
+        "action",
+        "tank"
+      ]
     },
     {
       "id": "bul-game",
@@ -54,7 +72,10 @@
       "description": "Trò chơi bắn tăng 2D hoàn chỉnh, thiết kế cho thiết bị di động và máy tính bảng với điều khiển cảm ứng",
       "icon": "icon.svg",
       "iconAlt": "Tank Icon",
-      "tags": ["tank", "action"]
+      "tags": [
+        "tank",
+        "action"
+      ]
     },
     {
       "id": "bul-game-02",
@@ -62,7 +83,10 @@
       "description": "Trò chơi chiến thuật với đồ họa sáng tạo",
       "icon": "icon.svg",
       "iconAlt": "Battlefield Icon",
-      "tags": ["battlefield", "strategy"]
+      "tags": [
+        "battlefield",
+        "strategy"
+      ]
     },
     {
       "id": "bul-game-03",
@@ -70,7 +94,11 @@
       "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "bul-game-04",
@@ -78,7 +106,11 @@
       "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "bul-game-05",
@@ -86,7 +118,11 @@
       "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "bul-game-06",
@@ -94,7 +130,11 @@
       "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "bul-game-07",
@@ -102,7 +142,11 @@
       "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "bul-game-08",
@@ -110,7 +154,11 @@
       "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "bul-game-09",
@@ -118,7 +166,11 @@
       "description": "Điều khiển anh hùng khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "bul-game-10",
@@ -126,7 +178,11 @@
       "description": "Điều khiển Thần Sấm khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "game-gof",
@@ -134,7 +190,11 @@
       "description": "Điều khiển Hoả Thần khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "game-gow",
@@ -142,7 +202,11 @@
       "description": "Điều khiển Thuỷ Thần khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "game-goe",
@@ -150,7 +214,11 @@
       "description": "Điều khiển Thần Đất khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "game-goa",
@@ -158,7 +226,11 @@
       "description": "Điều khiển Phong Thần khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     },
     {
       "id": "game-gom",
@@ -166,7 +238,23 @@
       "description": "Điều khiển Thần Kim Loại khám phá thế giới, chiến đấu với quái vật",
       "icon": "icon.svg",
       "iconAlt": "",
-      "tags": ["hero", "action", "adventure"]
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
+    },
+    {
+      "id": "game-elemental-gods",
+      "title": "Thần Nguyên Tố Mãi Đỉnh",
+      "description": "Chọn vị thần nguyên tố của bạn và chinh phục đấu trường thần thánh!",
+      "icon": "icon.svg",
+      "iconAlt": "",
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     }
   ]
 }
