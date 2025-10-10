@@ -82,5 +82,17 @@
         "17:B4:8A:4C:89:E2:A1:D6:4C:01:FB:4A:98:BC:D8:8B:70:C6:1D:10:59:B5:B1:9B:69:2F:C7:93:A9:82:C6:5F"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hoanganh25991.gomsignature",
+      "sha256_cert_fingerprints": [
+        "64:EC:29:ED:12:8B:86:57:0A:A3:22:93:4E:DD:A8:70:1C:13:EE:BF:E6:3E:AC:32:4B:07:F1:F9:28:77:3C:02"
+      ]
+    }
   }
 ]
