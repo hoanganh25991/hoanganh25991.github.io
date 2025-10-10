@@ -70,5 +70,17 @@
         "33:16:B2:A7:12:84:5B:30:BC:70:CD:0C:96:01:08:C7:CA:65:95:C9:4F:A8:C7:27:45:8B:2F:28:BA:75:A2:D5"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hoanganh25991.goesignature",
+      "sha256_cert_fingerprints": [
+        "17:B4:8A:4C:89:E2:A1:D6:4C:01:FB:4A:98:BC:D8:8B:70:C6:1D:10:59:B5:B1:9B:69:2F:C7:93:A9:82:C6:5F"
+      ]
+    }
   }
 ]
