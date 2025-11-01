@@ -255,6 +255,18 @@
         "action",
         "adventure"
       ]
+    },
+    {
+      "id": "face-recognition",
+      "title": "Face Recognition",
+      "description": "Advanced face recognition game using computer vision technology",
+      "icon": "icon.svg",
+      "iconAlt": "Face Recognition Icon",
+      "tags": [
+        "face-recognition",
+        "ai",
+        "action"
+      ]
     }
   ]
 }
