@@ -58,7 +58,19 @@
 </head>
 <body>
     <header>
-        <h1>Game Collection</h1>
+        <div class="header-container">
+            <h1>Game Collection</h1>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Search games..."
+                    aria-label="Search games"
+                >
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
         <audio id="background-music" loop>
             <source src="assets/audio/sia-unstoppable.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -86,40 +98,96 @@
     </div>
 
     <script>
-        // Load games when the page loads
+        let allGames = [];
+
         document.addEventListener('DOMContentLoaded', () => {
             loadGames();
             setupWelcomeScreen();
             generateParticles();
+            setupSearch();
         });
 
-        // Load games from JSON file
         async function loadGames() {
             try {
                 const response = await fetch('games.json');
                 const data = await response.json();
-                renderGames(data.games);
+                allGames = data.games;
+                renderGames(allGames);
             } catch (error) {
                 console.error('Error loading games:', error);
             }
         }
 
-        // Render games to the DOM
+        function fuzzySearch(query, text) {
+            const lowerQuery = query.toLowerCase();
+            const lowerText = text.toLowerCase();
+            
+            if (!lowerQuery) return true;
+            
+            let queryIndex = 0;
+            let textIndex = 0;
+            let matchedCharacters = 0;
+            
+            while (queryIndex < lowerQuery.length && textIndex < lowerText.length) {
+                if (lowerQuery[queryIndex] === lowerText[textIndex]) {
+                    matchedCharacters++;
+                    queryIndex++;
+                }
+                textIndex++;
+            }
+            
+            return queryIndex === lowerQuery.length ? matchedCharacters : 0;
+        }
+
+        function searchGames(query) {
+            if (!query.trim()) {
+                return allGames;
+            }
+
+            return allGames.filter(game => {
+                const titleMatch = fuzzySearch(query, game.title);
+                const descriptionMatch = fuzzySearch(query, game.description);
+                const tagsMatch = game.tags.some(tag => fuzzySearch(query, tag) > 0);
+                
+                return titleMatch > 0 || descriptionMatch > 0 || tagsMatch;
+            }).sort((a, b) => {
+                const aTitle = fuzzySearch(query, a.title);
+                const bTitle = fuzzySearch(query, b.title);
+                if (aTitle !== bTitle) return bTitle - aTitle;
+                
+                const aDesc = fuzzySearch(query, a.description);
+                const bDesc = fuzzySearch(query, b.description);
+                return bDesc - aDesc;
+            });
+        }
+
+        function setupSearch() {
+            const searchInput = document.getElementById('search-input');
+            
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value;
+                const results = searchGames(query);
+                renderGames(results);
+            });
+        }
+
         function renderGames(games) {
             const gameList = document.getElementById('game-list');
             gameList.innerHTML = '';
 
+            if (games.length === 0) {
+                gameList.innerHTML = '<li class="no-results">No games found</li>';
+                return;
+            }
+
             games.forEach(game => {
-                // Create game item as a clickable link
                 const gameItem = document.createElement('li');
                 gameItem.className = 'game-item';
                 
-                // Make the entire card clickable
                 gameItem.addEventListener('click', () => {
                     window.location.href = game.id;
                 });
 
-                // Create game HTML with play indicator
                 gameItem.innerHTML = `
                     <div class="game-info">
                         <div class="game-header">
@@ -140,7 +208,6 @@
                     </div>
                 `;
 
-                // Add to DOM
                 gameList.appendChild(gameItem);
             });
         }
