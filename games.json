@@ -267,6 +267,18 @@
         "ai",
         "action"
       ]
+    },
+    {
+      "id": "than-anh-sang",
+      "title": "Thần Ánh Sáng Mãi Đỉnh",
+      "description": "Điều khiển Thần Ánh Sáng khám phá thế giới, chiến đấu với quái vật",
+      "icon": "icon.svg",
+      "iconAlt": "Light God Icon",
+      "tags": [
+        "hero",
+        "action",
+        "adventure"
+      ]
     }
   ]
 }
