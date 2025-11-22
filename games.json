@@ -279,6 +279,18 @@
         "action",
         "adventure"
       ]
+    },
+    {
+      "id": "the-last-soldier",
+      "title": "Người Lính Cuối",
+      "description": "Người Lính Cuối",
+      "icon": "icon.svg",
+      "iconAlt": "icon",
+      "tags": [
+        "soldier",
+        "action",
+        "adventure"
+      ]
     }
   ]
 }
