@@ -94,5 +94,18 @@
         "64:EC:29:ED:12:8B:86:57:0A:A3:22:93:4E:DD:A8:70:1C:13:EE:BF:E6:3E:AC:32:4B:07:F1:F9:28:77:3C:02"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hoanganh25991.thelastsoldier",
+      "sha256_cert_fingerprints": [
+        "6B:29:2C:16:2B:49:1D:FE:A4:D4:65:B7:53:4A:FD:D5:CF:18:23:15:13:0D:87:70:3C:06:40:CF:B1:A1:C6:C7"
+      ]
+    }
   }
 ]
