@@ -291,6 +291,17 @@
         "action",
         "adventure"
       ]
+    },
+    {
+      "id": "3d-models",
+      "title": "3D models",
+      "description": "3D models",
+      "icon": "icon.svg",
+      "iconAlt": "icon",
+      "tags": [
+        "3d",
+        "model"
+      ]
     }
   ]
 }
