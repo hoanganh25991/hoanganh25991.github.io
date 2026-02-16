@@ -107,5 +107,17 @@
         "6B:29:2C:16:2B:49:1D:FE:A4:D4:65:B7:53:4A:FD:D5:CF:18:23:15:13:0D:87:70:3C:06:40:CF:B1:A1:C6:C7"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.hoanganh25991.monkjourneyv42",
+      "sha256_cert_fingerprints": [
+        "CA:1E:25:92:34:BC:19:D1:91:DB:3E:0D:D0:7E:8A:A2:05:5C:1B:73:E9:D1:1F:35:F0:D2:61:4B:59:C9:87:00"
+      ]
+    }
   }
 ]
