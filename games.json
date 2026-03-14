@@ -302,6 +302,18 @@
         "3d",
         "model"
       ]
+    },
+    {
+      "id": "crimson-lane",
+      "title": "Crimson Lane",
+      "description": "Crimson Lane",
+      "icon": "icon.svg",
+      "iconAlt": "icon",
+      "tags": [
+        "dota",
+        "moba",
+        "action"
+      ]
     }
   ]
 }
