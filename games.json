@@ -314,6 +314,17 @@
         "moba",
         "action"
       ]
+    },
+    {
+      "id": "snake",
+      "title": "Snake",
+      "description": "Snake",
+      "icon": "icon.svg",
+      "iconAlt": "icon",
+      "tags": [
+        "snake",
+        "action"
+      ]
     }
   ]
 }
