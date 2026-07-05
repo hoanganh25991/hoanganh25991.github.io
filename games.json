@@ -325,6 +325,19 @@
         "snake",
         "action"
       ]
+    },
+    {
+      "id": "path-of-dao",
+      "title": "Path Of Dao",
+      "description": "Wang Lin's road, map by map. Master Intent, Divine Arts & Dharma Treasures.",
+      "icon": "icon.svg",
+      "iconAlt": "icon",
+      "tags": [
+        "cultivation",
+        "action",
+        "adventure",
+        "story"
+      ]
     }
   ]
 }
